@@ -1,0 +1,109 @@
+<html lang="en"> 
+  
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Course Details</title> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+    
+  
+    <!-- INCLUDING JQUERY-->
+    <script src= 
+"https://code.jquery.com/jquery-3.5.1.js"> 
+    </script> 
+  
+    <!-- CSS FOR STYLING THE PAGE -->
+    <style> 
+    body{
+        background-image: url('image.jpg');
+    }
+        table { 
+            margin: 0 auto; 
+            font-size: large; 
+            border: 1px solid black; 
+        } 
+  
+        h1 { 
+            text-align: center; 
+            color:lightcoral; 
+            font-size: xx-large; 
+            font-family: 'Gill Sans',  
+                'Gill Sans MT', ' Calibri',  
+                'Trebuchet MS', 'sans-serif'; 
+        } 
+  
+        td { 
+            background-color: #E4F5D4; 
+            border: 1px solid black; 
+        } 
+  
+        th, 
+        td { 
+            font-weight: bold; 
+            border: 1px solid black; 
+            padding: 10px; 
+            text-align: center; 
+            
+        } 
+  
+        td { 
+            font-weight: lighter; 
+        } 
+    </style> 
+</head> 
+  
+<body> 
+    <section> 
+        <h1>Course Details</h1> 
+  
+        <!-- TABLE CONSTRUCTION-->
+        <table id='table'> 
+            <!-- HEADING FORMATION -->
+            <tr> 
+                <th>Course</th> 
+                <th>Level</th> 
+                <th>Period</th> 
+                <th>Price</th> 
+            </tr> 
+  
+            <script> 
+                $(document).ready(function () { 
+  
+                    // FETCHING DATA FROM JSON FILE 
+                    $.getJSON("info.json",  
+                            function (data) { 
+                        var course = ''; 
+  
+                        // ITERATING THROUGH OBJECTS 
+                        $.each(data, function (key, value) { 
+  
+                            //CONSTRUCTION OF ROWS HAVING 
+                            // DATA FROM JSON OBJECT 
+                            course += '<tr>'; 
+                            course += '<td>' +  
+                                value.coursename + '</td>'; 
+  
+                            course += '<td>' +  
+                                value.level + '</td>'; 
+  
+                            course += '<td>' +  
+                                value.period + '</td>'; 
+  
+                            course += '<td>' +  
+                                value.price + '</td>'; 
+  
+                            course += '</tr>'; 
+                        }); 
+                          
+                        //INSERTING ROWS INTO TABLE  
+                        $('#table').append(course); 
+                    }); 
+                }); 
+            </script> 
+    </section> 
+</body> 
+  
+</html> 

@@ -1,0 +1,8 @@
+[
+    {"coursename":"Mathematics","level":"Intermediate","period":"5 weeks","price":"Rs.5000"},
+    {"coursename":"C-Programming","level":"Beginner","period":"4 weeks","price":"Rs.3000"},
+    {"coursename":"English-Literature","level":"Advanced","period":"7 weeks","price":"Rs.6000"},
+    {"coursename":"Science","level":"Intermediate","period":"4 weeks","price":"Rs.5300"},
+    {"coursename":"Chemistry","level":"Advanced","period":"5 weeks","price":"Rs.2000"},
+    {"coursename":"Physics","level":"Beginner","period":"6 weeks","price":"Rs.4000"}
+]
